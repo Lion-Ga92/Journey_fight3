@@ -52,15 +52,16 @@ def you_continue():
     print("""Phew, that was a hard battle. It was well fought and after a day of resting and drinking healing
            potions you continue on your path hoping the new day does not bring any unpleasant surprises.
            at any rate. You have plenty of potions. Which though small in size, are great and powerful healers. You 
-           continue on your path. And after several hours you come across a river Do you stop to fish? or 
+           continue on your path. And after several hours you come across a dead horse, Do you stop to inspect it? or 
            do you give it s wide berth?""")
     dead_horse_choice = input("Do you 'inspect' or do you 'walk away'? ")
     if dead_horse_choice == "inspect":
         print("You inspected the dead horse when a bear attacks you. ")
         print(bcolors.FAIL + bcolors.BOLD + "DEFEND YOURSELF" + bcolors.END)
         fight_creature()
-        print("You decided to flay the bear amd, ")
+        print("You decided to flay the bear and, ")
         get_more_potions()
+        input("Press enter to continue")
         print("After you harvested some potions from the bear you continued on your journey and came upon a river")
         print("You crossed the bridge and come upon a fork in the road.")
         fork_in_road()
@@ -103,6 +104,30 @@ For river_crossing() i want to add other elements after this but i decided to ty
 and close this branch of the decision tree. i want to add elements of potion taking and healing. While slowly moving 
 the storyline back to the bridge. Or make it across the river before continuing down the road.
 """
+def fork_in_road():
+    print("""After a long journey, and a few scary moments. You crossed the bridge and come upon a fork in the road. 
+          The journey so far has been tough, and you hope that you will reach your destination on time for the feast 
+          of Augustus. In the road you notice that there are two signs. One points to the left and reads 'Lugdunum' 
+          and it is the Destination you are heading toward, the other at the right is hard to distinguish as the words 
+          are worn down. As you read the signs. You hear a shrill cry from the right road. You think for a second 
+          about which path to take?  """)
+    fork_road_choice = input("Do you take the 'left' or 'right' path? Please keep your input to 'in quotes' text: ")
+    if fork_road_choice == "left":
+        print("You ignored the cry from the right road, it is too risky. And you do not know what could happen.")
+        input("Press enter...")
+        print("After walking for a couple hours, you reach the edge of the forest. And continue on your way...")
+        print("""You will make it to the feast of Augustus on time. Thanks for taking this road with us, you may 
+              restart your journey and make other choices. Good bye for now.""")
+        exit()
+
+    if fork_road_choice == "right":
+        print("You are a kind person, and you decide that honor demands that you at least go and search the right road")
+        print("""You walk with guarded steps, and your sword on your hand. You slowly come upon a clearing. Where there
+              seem to be a burned cart. And some bodies on the ground, and you start to get apprehensive. Suddenly an 
+              enemy appears. """)
+        enemy.full_restore()
+        do_battle()
+
 
 
 def do_battle():
