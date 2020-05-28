@@ -127,6 +127,65 @@ def fork_in_road():
               enemy appears. """)
         enemy.full_restore()
         do_battle()
+        go_back_fork()
+
+    if fork_road_choice == "quit":
+        print("You have exited the script, you will be taken to the start of your journey when you restart the script")
+        print("Good bye")
+        exit()
+
+    else:
+        print("Response not valid")
+        print(bcolors.FAIL + bcolors.BOLD + "Restarting from current decision point" + bcolors.END)
+        fork_in_road()
+
+
+def cont_after_fishing_1():
+    print("""After a long journey, and a few scary moments. You crossed the bridge and come upon a fork in the road. 
+          The journey so far has been tough, and you hope that you will reach your destination on time for the feast 
+          of Augustus. In the road you notice that there are two signs. One points to the left and reads 'Lugdunum' 
+          and it is the Destination you are heading toward, the other at the right is hard to distinguish as the words 
+          are worn down. As you read the signs. You hear a shrill cry from the right road. You think for a second 
+          about which path to take?  """)
+    fork_road_choice_1= input("Do you take the 'left' or 'right' path? Please keep your input to 'in quotes' text: ")
+    if fork_road_choice_1 == "left":
+        print("You ignored the cry from the right road, it is too risky. And you do not know what could happen.")
+        input("Press enter...")
+        print("After walking for a couple hours, you reach the edge of the forest. And continue on your way...")
+        print("""You will make it to the feast of Augustus on time. Thanks for taking this road with us, you may 
+              restart your journey and make other choices. Good bye for now.""")
+        exit()
+
+    if fork_road_choice_1 == "right":
+        print("You are a kind person, and you decide that honor demands that you at least go and search the right road")
+        print("""You walk with guarded steps, and your sword on your hand. You slowly come upon a clearing. Where there
+              seem to be a burned cart. And some bodies on the ground, and you start to get apprehensive. Suddenly an 
+              enemy appears. """)
+        enemy.full_restore()
+        do_battle()
+        go_back_fork()
+
+    if fork_road_choice_1 == "quit":
+        print("You have exited the script, you will be taken to the start of your journey when you restart the script")
+        print("Good bye")
+        exit()
+
+    else:
+        print("Response not valid")
+        print(bcolors.FAIL + bcolors.BOLD + "Restarting from current decision point" + bcolors.END)
+        fork_in_road()
+
+
+def go_back_fork():
+    print("""My God this forest is infested with Thieves, and dangers. These are not the best times to be alive. The 
+          nation of Gaul is facing some difficulties times. But again we have prevailed, and have managed to outwit our 
+          foes. After looking around the battle field you conclude that there is no path to be followed from here.""")
+    input("Press enter to continue")
+    print("""You trace your steps back to the cross sign and take the left road. After a few hours you reach the end
+          the forest. And hope that no more scoundrels or creatures await your path.""")
+    input("Thank you for joining us in this journey, battles were fought and won with honor. Press enter to leave")
+    print("Good bye")
+    exit()
 
 
 
@@ -220,7 +279,15 @@ def fight_creature():
 
         elif index == 1:
             print("You ran away")
-            run = False
+            print("The bear gives chase to you, and catches you after a few minutes. It mortally wounds you...")
+            print("You are bleeding...")
+            input("Press enter")
+            print("You lay in agony, the bear comes around again")
+            input("Press enter")
+            print("It starts to tears you from limb to limb...")
+            print("You died horribly as a victim of the bear. Your family never finds your body. ")
+            exit()
+
 
         if Bear.get_hp() == 0:
             print("The creature is dead, you were wounded. We recommend resting to recover hp.")

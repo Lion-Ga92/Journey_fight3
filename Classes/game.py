@@ -51,7 +51,7 @@ class Person:
 
     def choose_crAction(self):
             i = 1
-            print("crAction")
+            print("Action")
             for item in self.crAction:
                 print(str(i) + ":" + item)
                 i += 1
@@ -110,6 +110,10 @@ class Creature:
         if self.hp < 0:
             self.hp = 0
             return self.hp
+
+
+
+
 
 
 
