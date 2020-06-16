@@ -308,3 +308,5 @@ def get_more_potions():
     print("You started searching for potions and got some potions. Your new potions total is", player.get_npotions())
 
 start_journey()
+
+prin("Hello bitches")
